@@ -1,0 +1,36 @@
+{
+  "name": "@kuaizi/vue-cli-plugin-register-component",
+  "version": "0.0.1",
+  "description": "Vue component register",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuaizi-co/vue-cli-plugin-register-component.git"
+  },
+  "scripts": {
+    "lint": "eslint index.js register-component.js --fix",
+    "prerelease": "npm run lint",
+    "release": "release-it",
+    "deploy": "sh deploy.sh"
+  },
+  "keywords": [
+    "vue-cli-plugin-register-component",
+    "register-component",
+    "webpack-plugin"
+  ],
+  "author": "tommyshao",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "fs-extra": "^7.0.1",
+    "globby": "^8.0.1"
+  },
+  "devDependencies": {
+    "conventional-changelog-cli": "^2.0.11",
+    "release-it": "^8.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/kuaizi-co/vue-cli-plugin-register-component/issues"
+  },
+  "homepage": "https://github.com/kuaizi-co/vue-cli-plugin-register-component#readme"
+}
