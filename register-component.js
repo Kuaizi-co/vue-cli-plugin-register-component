@@ -18,7 +18,7 @@ async function resolveComponents(dir) {
   if (!fs.existsSync(dir)) {
     return
   }
-  return (await globby(['**/*.vue', '!**/_*.vue', '!_*/*.vue'], { cwd: dir }))
+  return (await globby(['**/*.vue', '!**/__*.vue', '!__*/*.vue'], { cwd: dir }))
 }
 
 class registerComponent {
