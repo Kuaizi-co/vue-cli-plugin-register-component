@@ -25,7 +25,7 @@ class registerComponent {
   constructor (options) {
     this.options = options
   }
-  apply (complier) {
+  apply (compiler) {
 
     const generate = async () => {
       const { componentDir, components = [] } = this.options
@@ -70,8 +70,8 @@ class registerComponent {
       }
     }
 
-    complier.hooks.run.tap(pluginName, generate)
-    complier.hooks.watchRun.tap(pluginName, generate)
+    compiler.hooks.beforeRun.tap(pluginName, generate)
+    compiler.hooks.watchRun.tap(pluginName, generate)
   }
 }
 
