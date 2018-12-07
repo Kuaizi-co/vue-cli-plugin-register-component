@@ -4,6 +4,14 @@
 
 全局组件自动注册
 
+## 安装
+
+```
+> yarn add @kuaizi/vue-cli-plugin-register-component
+# 或者
+> npm i @kuaizi/vue-cli-plugin-register-component -D
+```
+
 ## 目录结构
 
 ```
@@ -55,15 +63,22 @@ import './components'
 // ...
 ```
 
-webpack配置
+**webpack默认不启动对文件增删进行watch监听**，但我们可以手动增加设置
 
 ```
-puligns: [
-  new registerComponentWebpackPlugin({
-    componentDir: ['./src/components', './src/pages/index/components']
-  })
-]
+# webapck.config.js
+{
+  // 默认为false
+  watch: true,
+  // 忽略目录
+  watchOptions: {
+    ignored: ['node_modules', 'tests'],
+    // 轮询时间配置查看webpack官网
+  },
+}
 ```
+
+[webpack watch](https://webpack.js.org/configuration/watch/)
 
 ## vue-register-component-webpack-plugin
 
