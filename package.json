@@ -1,6 +1,6 @@
 {
   "name": "@kuaizi/vue-cli-plugin-register-component",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vue component register",
   "main": "./index.js",
   "repository": {
