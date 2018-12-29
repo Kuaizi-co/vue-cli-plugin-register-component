@@ -22,14 +22,14 @@ src
   - pages
     - index
       - components
-        __common
+        _common
           header.vue
           footer.vue
         layout.vue
         _page.vue
 ```
 
-默认自动注册 `components` 目录所有组件, 其中不会注册 `__`开头的文件或者文件夹
+默认自动注册 `components` 目录所有组件, 其中不会注册 `_`开头的文件或者文件夹
 
 ```
 # src/pages/index/components/index.js

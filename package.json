@@ -11,7 +11,8 @@
     "lint": "eslint index.js register-component.js --fix",
     "prerelease": "npm run lint",
     "release": "release-it",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "kz-ci": "kz-commit"
   },
   "keywords": [
     "vue-cli-plugin-register-component",
