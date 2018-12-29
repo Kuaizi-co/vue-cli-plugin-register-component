@@ -57,7 +57,7 @@ class registerComponent {
           code += components.map(({ name, path: absolutePath }) => importCode(name, absolutePath))
         }
 
-        code = 'import Vue from \'vue\'\n' + code + '\n'
+        code = code.trim() === '' ? '' : 'import Vue from \'vue\'\n' + code + '\n'
 
         if (fs.existsSync(to) && fs.readFileSync(to, 'utf-8').trim() === code.trim()) {
           continue
