@@ -1,7 +1,7 @@
 {
   "src": {
     "tagName": "v%s",
-    "commitMessage": "%s"
+    "commitMessage": "[release] %s"
   },
   "increment": "conventional:angular",
   "beforeChangelogCommand": "conventional-changelog -p angular -i CHANGELOG.md -s",
