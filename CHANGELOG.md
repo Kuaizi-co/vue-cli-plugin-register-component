@@ -1,3 +1,7 @@
+## [0.1.2](https://github.com/kuaizi-co/vue-cli-plugin-register-component/compare/v0.1.1...v0.1.2) (2019-01-30)
+
+
+
 ## [0.1.1](https://github.com/kuaizi-co/vue-cli-plugin-register-component/compare/v0.1.0...v0.1.1) (2018-12-29)
 
 
