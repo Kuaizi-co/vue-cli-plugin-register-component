@@ -24,7 +24,8 @@
   "dependencies": {
     "eslint": "^5.9.0",
     "fs-extra": "^7.0.1",
-    "globby": "^8.0.1"
+    "globby": "^8.0.1",
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "conventional-changelog-cli": "^2.0.11",

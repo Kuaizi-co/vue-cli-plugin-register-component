@@ -5,6 +5,7 @@
 const path = require('path')
 const fs = require('fs-extra')
 const globby = require('globby')
+const watch = require('watch')
 const pluginName = 'registerComponentWebpackPlugin'
 const isString = str => typeof str === 'string'
 
@@ -24,6 +25,7 @@ async function resolveComponents(dir) {
 class registerComponent {
   constructor (options) {
     this.options = options
+    this.watchState = {}
   }
   apply (compiler) {
 
@@ -51,6 +53,20 @@ class registerComponent {
         const files = await resolveComponents(baseDir) || []
         const to = path.resolve(baseDir, 'index.js')
         let code = files.map(file => genImport(baseDir, file)).join('\n')
+        this.watchState[baseDir] = this.watchState[baseDir] ? this.watchState[baseDir] : false
+
+        // New File must be trigger generate
+        !this.watchState[baseDir] &&
+        process.env.NODE_ENV !== 'production' &&
+        watch.createMonitor(baseDir, {
+          // 2000ms
+          interval: 2,
+          // only watch *.vue files
+          filter: f => /\.vue$/g.test(f)
+        }, monitor => {
+          this.watchState[baseDir] = true
+          monitor.on("created", () => process.nextTick(generate))
+        })
 
         if (componentDirLen === 0) {
           // components 只注册到全局组件
