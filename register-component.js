@@ -66,6 +66,7 @@ class registerComponent {
         }, monitor => {
           this.watchState[baseDir] = true
           monitor.on('created', () => process.nextTick(generate))
+          monitor.on('remove', () => process.nextTick(generate))
         })
 
         if (componentDirLen === 0) {
