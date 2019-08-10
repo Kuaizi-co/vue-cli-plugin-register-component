@@ -52,7 +52,7 @@ class registerComponent {
         }
         const files = await resolveComponents(baseDir) || []
         const to = path.resolve(baseDir, 'index.js')
-        let code = files.map(file => genImport(baseDir, file)).join('\n')
+        let code = files.sort().map(file => genImport(baseDir, file)).join('\n')
         this.watchState[baseDir] = this.watchState[baseDir] ? this.watchState[baseDir] : false
 
         // New File must be trigger generate
@@ -86,8 +86,7 @@ class registerComponent {
       }
     }
 
-    compiler.hooks.beforeRun.tap(pluginName, generate)
-    compiler.hooks.watchRun.tap(pluginName, generate)
+    compiler.hooks.done.tap(pluginName, generate)
   }
 }
 
